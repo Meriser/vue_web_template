@@ -1,0 +1,11 @@
+// tailwind 匯入
+@import 'tailwind';
+
+// base 專案基礎樣式設定
+@import 'base';
+
+// 主題顏色變數，與 color.ts 保持同步
+@import 'variable';
+
+// 通用 class
+@import 'utils';

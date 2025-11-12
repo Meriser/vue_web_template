@@ -1,0 +1,21 @@
+// CSS 變數定義，使用 Vite 注入的 SCSS 變數（從 color.ts 自動同步）
+:root {
+  --color-primary: #{$primary};
+  --color-secondary: #{$secondary};
+  --color-info: #{$info};
+  --color-success: #{$success};
+  --color-warning: #{$warning};
+  --color-danger: #{$danger};
+  --color-light: #{$light};
+  --color-dark: #{$dark};
+}
+
+// 為了向後相容，重新導出 SCSS 變數以供 CSS var() 使用
+$primary: var(--color-primary);
+$secondary: var(--color-secondary);
+$info: var(--color-info);
+$success: var(--color-success);
+$warning: var(--color-warning);
+$danger: var(--color-danger);
+$light: var(--color-light);
+$dark: var(--color-dark);

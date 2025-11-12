@@ -1,0 +1,49 @@
+{
+  "name": "vue-web-template",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite --mode dev",
+    "prod": "vite --mode prod",
+    "build": "vue-tsc --noEmit && vite build",
+    "preview": "vite preview",
+    "type-check": "vue-tsc --noEmit",
+    "kill-ports": "powershell -Command \"Get-NetTCPConnection -LocalPort 5173,5174,5175,5176,5177 -ErrorAction SilentlyContinue | Select-Object -ExpandProperty OwningProcess -Unique | Where-Object {$_ -gt 0} | ForEach-Object { Stop-Process -Id $_ -Force }\""
+  },
+  "dependencies": {
+    "@element-plus/icons-vue": "^2.3.2",
+    "@vee-validate/zod": "^4.13.0",
+    "@vueuse/core": "^14.0.0",
+    "@vueuse/integrations": "^14.0.0",
+    "axios": "^1.13.2",
+    "dayjs": "^1.11.19",
+    "element-plus": "^2.11.7",
+    "eslint": "^9.39.1",
+    "eslint-plugin-vue": "^10.5.1",
+    "motion-v": "^1.7.4",
+    "pinia": "^2.2.0",
+    "qrcode": "^1.5.4",
+    "sass": "^1.93.3",
+    "sweetalert2": "^11.26.3",
+    "swiper": "^12.0.3",
+    "vee-validate": "^4.13.0",
+    "vue": "^3.5.22",
+    "vue-router": "^4.3.0",
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@types/node": "^24.10.0",
+    "@types/qrcode": "^1.5.6",
+    "@vitejs/plugin-vue": "^5.0.0",
+    "@vue/tsconfig": "^0.8.1",
+    "autoprefixer": "^10.4.21",
+    "postcss": "^8.5.6",
+    "tailwindcss": "^3.4.18",
+    "typescript": "^5.6.0",
+    "vite": "^5.0.0",
+    "vite-plugin-html": "^3.2.2",
+    "vite-plugin-vue-devtools": "^7.0.0",
+    "vue-tsc": "^2.0.0"
+  }
+}

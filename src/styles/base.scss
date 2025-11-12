@@ -1,0 +1,13 @@
+img {
+  max-width: 100%; // 圖片最大寬度 100%
+  height: auto;    // 圖片高度自適應
+  display: block;  // 轉為區塊元素，能清除圖片下方約 2px 空隙
+}
+
+*,
+*::before,
+*::after {
+  // 全域 box-sizing 設定
+  box-sizing: border-box;
+  // outline: 1px solid #000; // 切版時，方便看版面區塊使用
+}
