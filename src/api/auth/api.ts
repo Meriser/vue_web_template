@@ -15,6 +15,6 @@ export async function login(req: LoginRequest) {
     );
     return res.data.data;
   } catch (error) {
-    ApiHandleError(error, AuthPath.LOGIN);
+    ApiHandleError(error, login.name);
   }
 }
