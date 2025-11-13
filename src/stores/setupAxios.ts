@@ -1,5 +1,6 @@
 import axios, { AxiosError } from "axios";
 import { useAuthStore } from "./auth";
+import swal from "sweetalert2";
 
 // API 基礎 URL
 const VITE_API_URL = import.meta.env.VITE_API_URL;
@@ -27,6 +28,33 @@ AXIOS.interceptors.request.use(
   },
   // 請求錯誤處理
   (error: AxiosError) => {
+    // 若回傳 401，則清除 token 並跳轉到登入頁
+    if (error.response?.status === 401) {
+      swal.fire({
+        title: "未授權",
+        text: "請重新登入",
+        icon: "error",
+      });
+      useAuthStore().clearToken();
+      return error;
+    }
+
+    // 若回傳網路錯誤，則顯示網路錯誤提示
+    if (error.name === "AxiosError" && error.code === "ERR_NETWORK") {
+      swal.fire({
+        title: "網路錯誤",
+        text: "請檢查網路連線",
+        icon: "error",
+      });
+      return error;
+    }
+
+    // 錯誤提示
+    swal.fire({
+      title: "錯誤",
+      text: error.message,
+      icon: "error",
+    });
     return Promise.reject(error);
   }
 );
