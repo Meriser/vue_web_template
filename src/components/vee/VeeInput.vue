@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useField } from "vee-validate";
-import { computed, ref } from "vue";
-import { View, Hide } from "@element-plus/icons-vue";
+import { computed } from "vue";
+import Input from "@/components/Input.vue";
 
 // 定義 Props
 interface Props {
@@ -31,17 +31,6 @@ const { value, errorMessage, handleBlur, handleChange, meta } = useField<
   validateOnValueUpdate: false,
 });
 
-// 密碼顯示控制
-const showPassword = ref(false);
-
-// 動態計算輸入框類型
-const inputType = computed(() => {
-  if (props.type === "password" && showPassword.value) {
-    return "text";
-  }
-  return props.type;
-});
-
 // 處理輸入變更
 const handleInput = (newValue: string | number | undefined) => {
   const safeValue = newValue ?? "";
@@ -60,30 +49,20 @@ const showError = computed(() => !!errorMessage.value && meta.touched);
       <span v-if="props.required" class="text-red-500 ml-1">*</span>
     </label>
 
-    <el-input
+    <Input
       :model-value="value ?? ''"
       @update:model-value="handleInput"
-      :type="inputType"
+      :type="props.type"
       :placeholder="props.placeholder"
-      :disabled="props.disabled"
       :size="props.size"
       :prefix-icon="props.prefixIcon"
       :clearable="props.clearable"
-      :id="props.name"
       v-bind="$attrs"
       @blur="handleBlur"
       :class="{
         'is-error': showError,
       }"
-    >
-      <!-- 密碼顯示/隱藏按鈕 -->
-      <template v-if="props.type === 'password'" #suffix>
-        <el-icon class="cursor-pointer" @click="showPassword = !showPassword">
-          <View v-if="showPassword" />
-          <Hide v-else />
-        </el-icon>
-      </template>
-    </el-input>
+    />
 
     <Transition name="fade">
       <span v-if="showError" class="text-red-500 text-sm mt-1 block">
@@ -94,25 +73,4 @@ const showError = computed(() => !!errorMessage.value && meta.touched);
 </template>
 
 <style scoped>
-.fade-enter-active,
-.fade-leave-active {
-  transition: opacity 0.2s ease;
-}
-
-.fade-enter-from,
-.fade-leave-to {
-  opacity: 0;
-}
-
-:deep(.el-input.is-error .el-input__wrapper) {
-  box-shadow: 0 0 0 1px var(--el-color-danger) inset;
-}
-
-:deep(.el-input.is-error .el-input__wrapper:hover) {
-  box-shadow: 0 0 0 1px var(--el-color-danger) inset;
-}
-
-:deep(.el-input.is-error .el-input__wrapper.is-focus) {
-  box-shadow: 0 0 0 1px var(--el-color-danger) inset;
-}
 </style>
