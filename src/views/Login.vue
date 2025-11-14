@@ -7,6 +7,10 @@ import { useForm } from "vee-validate";
 import { toTypedSchema } from "@vee-validate/zod";
 import { loginSchema, type LoginFormData } from "@/schemas/auth";
 import VeeInput from "@/components/vee/VeeInput.vue";
+import useAlert from "@/hooks/useAlert";
+
+// 使用 alert 提示
+const { showAlert } = useAlert();
 
 const loading = ref(false);
 const error = ref<string | null>(null);
@@ -39,6 +43,18 @@ const login = handleSubmit(async (values) => {
       authStore.setToken(mockToken);
       // 登入成功後，導向首頁
       router.push("/");
+      // 顯示登入成功訊息
+      showAlert({
+        title: "登入成功!",
+        icon: "success",
+        timer: 3000,
+        timerProgressBar: true,
+        toast: true,
+        position: "bottom-end",
+        showCloseButton: true,
+        showConfirmButton: false,
+        showCancelButton: false,
+      });
     } else {
       error.value = "帳號或密碼錯誤";
     }
@@ -122,13 +138,3 @@ const login = handleSubmit(async (values) => {
     </div>
   </div>
 </template>
-
-<style scoped>
-:deep(.el-card__header) {
-  padding: 1rem 1.5rem;
-}
-
-:deep(.el-card__body) {
-  padding: 1.5rem;
-}
-</style>

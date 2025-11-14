@@ -31,6 +31,7 @@ export default defineConfig(({ mode }) => {
         '@assets': resolve(__dirname, 'src/assets'),
         '@colors': resolve(__dirname, 'src/colors'),
         '@components': resolve(__dirname, 'src/components'),
+        '@hooks': resolve(__dirname, 'src/hooks'),
         '@router': resolve(__dirname, 'src/router'),
         '@schemas': resolve(__dirname, 'src/schemas'),
         '@types': resolve(__dirname, 'src/types'),
