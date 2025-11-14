@@ -86,6 +86,7 @@ src/
 ├── assets/        # 靜態資源
 ├── colors/        # 主題色設定
 ├── components/    # 公共元件
+├── hooks/         # 自訂 composable（組合式函式）
 ├── router/        # 路由
 ├── schemas/       # Zod Schema
 ├── stores/        # Pinia 狀態管理
@@ -105,6 +106,7 @@ src/
 @assets/    → src/assets/
 @colors/    → src/colors/
 @components/→ src/components/
+@hooks      → src/hooks/
 @router/    → src/router/
 @schemas/   → src/schemas/
 @stores/    → src/stores/
