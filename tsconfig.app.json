@@ -11,6 +11,8 @@
     "allowImportingTsExtensions": true,
     "resolveJsonModule": true,
     "skipLibCheck": true,
+    /* 指定編譯目標的 JavaScript 版本 */
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
 
     /* Linting */
     "strict": true,
