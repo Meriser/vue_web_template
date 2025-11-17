@@ -34,7 +34,7 @@ const router = createRouter({
   routes,
 })
 
-// 全域前置守衛：檢查是否需要驗證
+// 全域前置守衛：每次路由切換時，檢查是否需要登入驗證，並依據驗證狀態進行導向
 router.beforeEach((to, _from, next) => {
   const authStore = useAuthStore()
   
