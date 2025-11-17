@@ -106,7 +106,7 @@ src/
 @assets/    → src/assets/
 @colors/    → src/colors/
 @components/→ src/components/
-@hooks      → src/hooks/
+@hooks/     → src/hooks/
 @router/    → src/router/
 @schemas/   → src/schemas/
 @stores/    → src/stores/
