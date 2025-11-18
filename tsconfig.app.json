@@ -5,7 +5,19 @@
     "types": ["vite/client"],
     "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*":         ["./src/*"],
+      "@api/*":      ["./src/api/*"],
+      "@assets/*":   ["./src/assets/*"],
+      "@colors/*":   ["./src/colors/*"],
+      "@components/*":["./src/components/*"],
+      "@hooks/*":    ["./src/hooks/*"],
+      "@router/*":   ["./src/router/*"],
+      "@schemas/*":  ["./src/schemas/*"],
+      "@types/*":    ["./src/types/*"],
+      "@stores/*":   ["./src/stores/*"],
+      "@styles/*":   ["./src/styles/*"],
+      "@utils/*":    ["./src/utils/*"],
+      "@views/*":    ["./src/views/*"]
     },
     "moduleResolution": "bundler",
     "allowImportingTsExtensions": true,
