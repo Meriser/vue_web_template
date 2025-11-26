@@ -9,6 +9,7 @@ interface Props {
   size?: "large" | "default" | "small"; // 輸入框尺寸
   prefixIcon?: any;                     // 輸入框前綴 icon
   clearable?: boolean;                  // 是否可清除輸入內容
+  inputClass?: string;                  // 輸入框 class 樣式
 }
 
 // 設定 props 預設值
@@ -16,6 +17,7 @@ const props = withDefaults(defineProps<Props>(), {
   type: "text",
   size: "default",
   clearable: true,
+  inputClass: "w-[200px]",
 });
 
 // 聲明父組件 v-model 綁定的值（支持 undefined，因為清空時會是 undefined）
@@ -48,6 +50,7 @@ function handleShowPassword() {
     :size="size"
     :prefix-icon="prefixIcon"
     :clearable="clearable"
+    :class="inputClass"
   >
     <template v-if="type === 'password'" #suffix>
       <el-icon class="cursor-pointer" @click="handleShowPassword">
