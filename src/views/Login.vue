@@ -85,6 +85,7 @@ const login = handleSubmit(async (values) => {
             placeholder="請輸入帳號"
             type="text"
             size="large"
+            inputClass="w-full"
             :prefix-icon="User"
             required
           />
@@ -95,6 +96,7 @@ const login = handleSubmit(async (values) => {
             placeholder="請輸入密碼"
             type="password"
             size="large"
+            inputClass="w-full"
             :prefix-icon="Lock"
             required
           />
