@@ -4,7 +4,7 @@ import Layout from "@/views/Layout.vue";
 </script>
 
 <template>
-  <v-app>
+  <div>
     <!-- 僅於登入頁時顯示登入畫面，不使用 Layout -->
     <template v-if="$route.name === 'Login'">
       <RouterView />
@@ -14,7 +14,7 @@ import Layout from "@/views/Layout.vue";
     <template v-else>
       <Layout />
     </template>
-  </v-app>
+  </div>
 </template>
 
 <style scoped></style>
