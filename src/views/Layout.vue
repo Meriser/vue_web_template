@@ -134,9 +134,3 @@ const handleMenuSelect = (to: string) => {
     </el-container>
   </div>
 </template>
-
-<style scoped>
-:deep(.el-menu-item.is-active) {
-  background-color: var(--color-primary);
-}
-</style>
