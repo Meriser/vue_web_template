@@ -84,7 +84,6 @@ pnpm preview
 src/
 ├── api/           # API 接口
 ├── assets/        # 靜態資源
-├── colors/        # 主題色設定
 ├── components/    # 公共元件
 ├── hooks/         # 自訂 composable（組合式函式）
 ├── router/        # 路由
@@ -104,7 +103,6 @@ src/
 @/          → src/
 @api/       → src/api/
 @assets/    → src/assets/
-@colors/    → src/colors/
 @components/→ src/components/
 @hooks/     → src/hooks/
 @router/    → src/router/
@@ -115,19 +113,6 @@ src/
 @utils/     → src/utils/
 @views/     → src/views/
 ```
-
-## 🎨 SCSS 全局變數
-
-專案已自動注入 SCSS 變數，可直接使用：
-
-```scss
-.example {
-  color: $primary;
-  background: $light;
-}
-```
-
-變數定義於 `src/colors/color.ts`
 
 ## 🔐 認證流程
 
