@@ -1,30 +1,17 @@
-// 通用 hover class
-.hover-primary {
-  transition: color 0.2s, background 0.2s;
-  &:hover, &:focus {
-    color: $primary;
-  }
-}
-
-.hover-bg-primary {
-  transition: background-color 0.2s;
-  &:hover, &:focus {
-    background-color: $primary;
-    color: $light;
-  }
-}
+@import "@/styles/variable";
 
 .hover-opacity {
-  transition: opacity 0.2s;
-  &:hover, &:focus {
-    opacity: 0.8;
+  transition: opacity $transition-base;
+  &:hover,
+  &:focus {
+    opacity: $opacity-base;
   }
 }
 
 .hover-scale {
-  transition: transform 0.2s;
-  &:hover, &:focus {
-    transform: scale(1.05);
+  transition: transform $transition-base;
+  &:hover,
+  &:focus {
+    transform: scale($scale-base);
   }
 }
-

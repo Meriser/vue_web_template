@@ -1,5 +1,4 @@
 import Swal from "sweetalert2";
-import { color } from "@/colors/color";
 
 export interface AlertProps {
   title: string;
@@ -63,8 +62,8 @@ export default function useAlert() {
     showCancelButton = false,
     confirmButtonText = "確認",
     cancelButtonText = "取消",
-    confirmButtonColor = color.primary,
-    cancelButtonColor = color.danger,
+    confirmButtonColor = "#1976D2",
+    cancelButtonColor = "#FF5252",
     input,
     inputValue,
     inputPlaceholder,
